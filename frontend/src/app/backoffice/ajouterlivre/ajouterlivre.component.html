@@ -1,0 +1,40 @@
+<div class="container mt-4 ml-5 mr-5">
+  <h2 class="text-center mb-4"> Ajouter un livre</h2>
+
+  <form (ngSubmit)="onSubmit()" #form="ngForm" enctype="multipart/form-data">
+    <div class="row mb-3">
+      <div class="col-lg-6">
+        <label>Titre</label>
+        <input type="text" class="form-control" [(ngModel)]="livre.titre" name="titre" required>
+      </div>
+      <div class="col-lg-6">
+        <label>Auteur</label>
+        <input type="text" class="form-control" [(ngModel)]="livre.auteur" name="auteur" required>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-lg-6">
+        <label>Année</label>
+        <input type="number" class="form-control" [(ngModel)]="livre.annee" name="annee" required>
+      </div>
+      <div class="col-lg-6">
+        <label>Genre</label>
+        <input type="text" class="form-control" [(ngModel)]="livre.genre" name="genre" required>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-lg-6">
+        <label>Prix (DT)</label>
+        <input type="number" class="form-control" [(ngModel)]="livre.prix" name="prix" required>
+      </div>
+      <div class="col-lg-6">
+        <label>Image</label>
+        <input type="file" class="form-control" (change)="onFileSelected($event)">
+      </div>
+    </div>
+
+    <button class="btn btn-primary w-100" type="submit"> Enregistrer</button>
+  </form>
+</div>

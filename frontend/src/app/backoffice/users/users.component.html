@@ -1,0 +1,47 @@
+<!-- 🔧 Angular Template: users.component.html -->
+<div class="container mt-5">
+  <h2 class="text-center mb-4">👥 Gestion des Utilisateurs</h2>
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <input type="text" [(ngModel)]="searchTerm" (input)="filterUsers()"
+           class="form-control w-50" placeholder="🔍 Rechercher par nom, email...">
+    <button class="btn btn-primary" (click)="ajouterUser()">➕ Ajouter Utilisateur</button>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>📷 Photo /th>
+          <th>🧑 Nom && Prenom</th>
+       
+          <th>📧 Email</th>
+          <th>📞 Num Téléphone</th>
+          <th>⚙️ les Actions possibles</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of paginatedUsers">
+          <td>
+            <img *ngIf="user.photoUrl" [src]="'http://localhost:8000/' + user.photoUrl" width="60" height="60" class="rounded-circle border shadow-sm">
+          </td>
+          <td>{{ user.nom }} {{ user.prenom }}</td>
+          
+          <td>{{ user.email }}</td>
+          <td>{{ user.telephone }}</td>
+          <td>
+            <button class="btn btn-warning btn-sm me-2" (click)="modifierUser(user.id)">✏️ Modifier</button>
+            <button class="btn btn-danger btn-sm" (click)="supprimerUser(user.id)">🗑️ Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  <div class="d-flex justify-content-between align-items-center mt-3">
+    <button class="btn btn-outline-primary" [disabled]="currentPage === 1" (click)="prevPage()">⬅️ Précédent</button>
+    <div>Page {{ currentPage }} / {{ totalPages }}</div>
+    <button class="btn btn-outline-primary" [disabled]="currentPage === totalPages" (click)="nextPage()">Suivant ➡️</button>
+  </div>
+</div>

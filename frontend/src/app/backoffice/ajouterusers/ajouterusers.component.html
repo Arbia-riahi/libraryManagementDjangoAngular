@@ -1,0 +1,41 @@
+<div class="container mt-4 ml-5 mr-5">
+  <h2 class="text-center mb-4">➕ Ajouter un Utilisateur</h2>
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Nom</label>
+        <input type="text" class="form-control" formControlName="nom">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Prénom</label>
+        <input type="text" class="form-control" formControlName="prenom">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" formControlName="email">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Téléphone</label>
+        <input type="text" class="form-control" formControlName="telephone">
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Mot de passe</label>
+      <input type="password" class="form-control" formControlName="password">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Photo (facultative)</label>
+      <input type="file" class="form-control" (change)="onFileChange($event)">
+    </div>
+
+    <button type="submit" class="btn btn-success">Enregistrer</button>
+    <button type="button" class="btn btn-secondary ms-2" (click)="annuler()">Annuler</button>
+  </form>
+</div>
+

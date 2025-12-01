@@ -1,0 +1,62 @@
+<div class="container mt-5 p-4 bg-white border rounded shadow" style="max-width: 100%;">
+  <div class="row">
+
+    <!-- Section gauche -->
+    <div class="col-md-4">
+      <div class="card text-center border">
+        <div class="card-body">
+          <img
+            *ngIf="imageUrl"
+            [src]="imageUrl"
+            alt="Photo de profil"
+            class="rounded-circle mb-3 border"
+            style="width: 120px; height: 120px;">
+          <h5 class="card-title">{{profileForm.value.prenom}} {{ profileForm.value.nom}} </h5>
+          <p><strong>Email:</strong> {{ profileForm.value.email }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section droite -->
+    <div class="col-md-8">
+      <h4 class="mb-4">Mon Profil</h4>
+
+     
+
+      <!-- Formulaire lié à Angular -->
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label class="form-label">Nom</label>
+          <input type="text" class="form-control" formControlName="nom">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Prénom</label>
+          <input type="text" class="form-control" formControlName="prenom">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" formControlName="email">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Téléphone</label>
+          <input type="text" class="form-control" formControlName="telephone">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Mot de passe (facultatif)</label>
+          <input type="password" class="form-control" formControlName="password">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Photo de profil (facultatif)</label>
+          <input type="file" class="form-control" (change)="onFileChange($event)">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Mettre à jour</button>
+      </form>
+    </div>
+  </div>
+</div>

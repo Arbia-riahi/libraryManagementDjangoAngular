@@ -1,0 +1,10 @@
+.container {
+  max-width: 100% !important;
+}
+
+
+.main-content {
+  width: 100%;
+  padding-right: 0;
+  margin-right: 0;
+}

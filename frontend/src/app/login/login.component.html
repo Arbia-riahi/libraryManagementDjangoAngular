@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App store Login</title>
+  
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+   
+    
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+
+   
+
+        body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #003366, #0059b3);
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    
+    width: 1270px;
+          
+}
+
+  .container {
+            display: flex;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            width:800px;
+            height:500px;
+            
+        }
+
+    html, body {
+    overflow-x: hidden; /* ✅ évite l’espace vide horizontalement */
+}
+
+
+        .left-section {
+            background: linear-gradient(135deg, #004080, #0066cc);
+            color: #fff;
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .left-section::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+        .left-section img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        .left-section h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .left-section p {
+            font-size: 1rem;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .right-section {
+            flex: 1;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .right-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #004080;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+        .form-group input:focus {
+            border-color: #0066cc;
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 102, 204, 0.5);
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(90deg, #004080, #0066cc);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(90deg, #003366, #0059b3);
+        }
+        .extra-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .extra-links a {
+            color: #004080;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .extra-links a:hover {
+            color: #0066cc;
+        }
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .social-login a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #f1f1f1;
+            border-radius: 50%;
+            color: #333;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+        }
+        .social-login a:hover {
+            background: #004080;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Left Section -->
+    <div class="left-section">
+        <img src="../../assets/bookstore.jpg" alt="">
+         <h4>Bienvenue a RIAHI Store</h4>
+        <p>Ta bibliothèque, toujours ouverte : choisis un livre, c’est parti pour l’aventure !</p>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+        <h2>Connexion</h2>
+       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="input-group mb-3">
+        <span class="input-group-text"><i class="fas fa-user"></i></span>
+        <input type="email" class="form-control" formControlName="email" placeholder="Email">
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+        <input type="password" class="form-control" formControlName="password" placeholder="Mot de passe">
+      </div>
+
+      <div *ngIf="errorMessage" class="alert alert-danger py-1 text-center">{{ errorMessage }}</div>
+
+      <button class="btn btn-primary w-100">Se connecter</button>
+
+     
+    </form>
+       
+        
+        <div class="extra-links">
+           
+            
+            <a class="small" [routerLink]="['/register']">Créer un compte ?</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+

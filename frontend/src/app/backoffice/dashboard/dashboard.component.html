@@ -1,0 +1,87 @@
+<!-- dashboard.component.html -->
+<link href="/assets/backoffice/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900" rel="stylesheet">
+<link href="/assets/backoffice/css/sb-admin-2.min.css" rel="stylesheet">
+<!-- Lien à ajouter dans index.html si non encore présent -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <a class="sidebar-brand d-flex align-items-center justify-content-start px-3" [routerLink]="['/backoffice']" style="gap: 10px;">
+     
+      <span class="sidebar-brand-text text-white fw-bold text-center mt-5" style="font-size: 1rem;">
+        espace administrateur
+      </span>
+    </a>
+    
+    
+  
+    <hr class="sidebar-divider my-0">
+  
+  
+  
+    <hr class="sidebar-divider">
+    <div class="sidebar-heading"></div>
+
+   
+    
+    
+    
+    
+   <li class="nav-item">
+  <a class="nav-link d-flex align-items-center ml-4 mt-5" [routerLink]="['/backoffice/livres']">
+    <i class="fas fa-book me-2"></i>
+    <span>Gérer les Livres</span>
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link d-flex align-items-center ml-4" [routerLink]="['/backoffice/users']">
+    <i class="fas fa-users me-2"></i>
+    <span>Gérer Utilisateurs</span>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a class="nav-link d-flex align-items-center ml-4" [routerLink]="['/backoffice/profile']">
+    <i class="fas fa-user-cog me-2"></i>
+    <span>Gérer Profil</span>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a class="nav-link d-flex align-items-center ml-4" [routerLink]="['/login']">
+    <i class="fas fa-sign-out-alt me-2"></i>
+    <span>Déconnexion</span>
+  </a>
+</li>
+
+
+    
+    <hr class="sidebar-divider d-none d-md-block">
+  </ul>
+  <!-- End Sidebar -->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+    
+
+    
+
+      <!-- Router outlet pour afficher les pages internes -->
+      <div class="container-fluid px-4">
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
+  </div>
+
+
+<!-- Scripts JS -->
+<script src="/assets/backoffice/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/backoffice/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/backoffice/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="/assets/backoffice/js/sb-admin-2.min.js"></script>
+<script src="/assets/backoffice/vendor/chart.js/Chart.min.js"></script>

@@ -1,0 +1,21 @@
+.social-login a {
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-login a.google {
+    color: #db4437;
+}
+
+.social-login a.facebook {
+    color: #3b5998;
+}
+
+.social-login a.github {
+    color: #333;
+}
+
+.social-login a:hover {
+    opacity: 0.7;
+}

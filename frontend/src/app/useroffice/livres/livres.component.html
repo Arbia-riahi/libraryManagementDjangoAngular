@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4 mt-5">📚 Liste des Livres</h2>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>📷 Image du livre </th>
+          <th>📖 Titre du livre</th>
+          <th>✍️ Auteur du livre</th>
+          <th>📅 Année du livre</th>
+          <th>🏷 Genre livre </th>
+          <th>💰 Prix du livre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let livre of livres">
+          <td>
+            <img *ngIf="livre.imageUrl" [src]="'http://localhost:8000/' + livre.imageUrl"
+                 width="60" height="60" class="rounded border shadow-sm">
+          </td>
+          <td>{{ livre.titre }}</td>
+          <td>{{ livre.auteur }}</td>
+          <td>{{ livre.annee }}</td>
+          <td>{{ livre.genre }}</td>
+          <td>{{ livre.prix }} DT</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

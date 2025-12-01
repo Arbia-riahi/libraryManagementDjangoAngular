@@ -1,0 +1,13 @@
+/* Pour masquer la barre latérale */
+.sidebar.toggled {
+    display: none;
+  }
+  
+  /* Optionnel : ajustez la largeur du conteneur principal */
+  .sidebar.toggled + #content-wrapper {
+    margin-left: 0;
+  }
+  
+
+ 
+  
